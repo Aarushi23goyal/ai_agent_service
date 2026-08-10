@@ -1,0 +1,21 @@
+package com.mine.service.impl;
+
+import com.mine.entity.User;
+import com.mine.repository.UserRepository;
+import com.mine.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class UserServiceImpl implements UserService {
+
+    private final UserRepository userRepository;
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+}
